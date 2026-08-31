@@ -1,0 +1,144 @@
+import type { Buyer } from "@/types";
+
+export const seedBuyers: Buyer[] = [
+  {
+    id: "buy_urbannest",
+    companyName: "UrbanNest Interiors",
+    category: "Interior Designer",
+    location: "Mumbai, Maharashtra",
+    interestedIn: "Handcrafted Home Decor",
+    potentialOrderMin: 50,
+    potentialOrderMax: 100,
+    matchScore: 87,
+    matchReason:
+      "Matches your product category, production capacity, and price range.",
+    preferredCategories: ["Home Decor", "Bamboo Craft", "Traditional Art"],
+    logoInitials: "UN",
+    logoColor: "bg-[#33513f]",
+    about:
+      "A Mumbai-based interior design studio sourcing artisanal decor pieces for boutique hotel and residential projects across Western India.",
+  },
+  {
+    id: "buy_craftfolk",
+    companyName: "CraftFolk Retail Co.",
+    category: "Retailer",
+    location: "Bengaluru, Karnataka",
+    interestedIn: "Textiles & Handloom Products",
+    potentialOrderMin: 100,
+    potentialOrderMax: 300,
+    matchScore: 92,
+    matchReason:
+      "Strong match on handloom category, natural materials, and consistent monthly reorder pattern.",
+    preferredCategories: ["Handloom", "Textiles"],
+    logoInitials: "CF",
+    logoColor: "bg-[#bf5b30]",
+    about:
+      "A curated lifestyle retail chain with 14 stores across South India, focused exclusively on ethically sourced handmade textiles and home goods.",
+  },
+  {
+    id: "buy_tajstay",
+    companyName: "Taj Riverside Resorts",
+    category: "Hotel",
+    location: "Udaipur, Rajasthan",
+    interestedIn: "Pottery, Brass Decor & Wall Art",
+    potentialOrderMin: 30,
+    potentialOrderMax: 80,
+    matchScore: 81,
+    matchReason:
+      "Matches regional craft aesthetic and decor budget for boutique hospitality interiors.",
+    preferredCategories: ["Pottery", "Metal Craft", "Traditional Art"],
+    logoInitials: "TR",
+    logoColor: "bg-[#c1972f]",
+    about:
+      "A boutique heritage resort chain that furnishes guest rooms and common areas exclusively with locally sourced Rajasthani handicrafts.",
+  },
+  {
+    id: "buy_giftwala",
+    companyName: "Giftwala Corporate Gifting",
+    category: "Corporate Buyer",
+    location: "Delhi NCR",
+    interestedIn: "Festive Gifting & Small Decor Items",
+    potentialOrderMin: 200,
+    potentialOrderMax: 500,
+    matchScore: 78,
+    matchReason:
+      "High-volume festive gifting demand matches your production quantity and unit price range.",
+    preferredCategories: ["Metal Craft", "Home Decor", "Jewellery"],
+    logoInitials: "GW",
+    logoColor: "bg-[#b8862a]",
+    about:
+      "A corporate gifting agency supplying curated Diwali and year-end hampers to over 120 enterprise clients across India.",
+  },
+  {
+    id: "buy_earthwoven",
+    companyName: "EarthWoven Wholesale",
+    category: "Wholesaler",
+    location: "Ahmedabad, Gujarat",
+    interestedIn: "Jewellery & Textile Accessories",
+    potentialOrderMin: 150,
+    potentialOrderMax: 400,
+    matchScore: 85,
+    matchReason:
+      "Matches tribal jewellery category and wholesale-ready unit pricing.",
+    preferredCategories: ["Jewellery", "Textiles"],
+    logoInitials: "EW",
+    logoColor: "bg-[#35617a]",
+    about:
+      "A regional wholesale distributor supplying handmade jewellery and textile accessories to over 200 boutique retailers across Western India.",
+  },
+  {
+    id: "buy_littlebazaar",
+    companyName: "Little Bazaar Gift Shops",
+    category: "Gift Shop",
+    location: "Goa",
+    interestedIn: "Small Decor & Souvenir-Style Products",
+    potentialOrderMin: 40,
+    potentialOrderMax: 120,
+    matchScore: 74,
+    matchReason:
+      "Matches lightweight, giftable product profile popular with tourist footfall.",
+    preferredCategories: ["Home Decor", "Jewellery", "Traditional Art"],
+    logoInitials: "LB",
+    logoColor: "bg-[#7a3b3b]",
+    about:
+      "A chain of 6 souvenir and gift boutiques across Goa's tourist districts, sourcing authentic Indian handicrafts over mass-produced imports.",
+  },
+  {
+    id: "buy_greenroots",
+    companyName: "GreenRoots Sustainable Living",
+    category: "Retailer",
+    location: "Pune, Maharashtra",
+    interestedIn: "Bamboo & Eco-Friendly Home Products",
+    potentialOrderMin: 80,
+    potentialOrderMax: 200,
+    matchScore: 90,
+    matchReason:
+      "Strong match on sustainable material sourcing and eco-conscious brand positioning.",
+    preferredCategories: ["Bamboo Craft", "Home Decor"],
+    logoInitials: "GR",
+    logoColor: "bg-[#3f7d4f]",
+    about:
+      "An e-commerce and retail brand specialising exclusively in sustainable, plastic-free home and lifestyle products.",
+  },
+  {
+    id: "buy_heritage",
+    companyName: "Heritage Hospitality Group",
+    category: "Hotel",
+    location: "Jaipur, Rajasthan",
+    interestedIn: "Blue Pottery & Wall Art",
+    potentialOrderMin: 25,
+    potentialOrderMax: 60,
+    matchScore: 83,
+    matchReason:
+      "Direct regional match with Jaipur blue pottery sourcing needs for hotel dining collections.",
+    preferredCategories: ["Pottery", "Traditional Art"],
+    logoInitials: "HH",
+    logoColor: "bg-[#8a3f6b]",
+    about:
+      "A heritage hotel group operating 5 properties across Rajasthan, known for showcasing regional craft in guest experiences.",
+  },
+];
+
+export function getBuyerById(id: string): Buyer | undefined {
+  return seedBuyers.find((b) => b.id === id);
+}

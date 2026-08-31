@@ -1,0 +1,92 @@
+import type { Enquiry } from "@/types";
+
+export const seedEnquiries: Enquiry[] = [
+  {
+    id: "enq_1",
+    productId: "prod_blue_pottery_bowl",
+    buyerName: "Ananya Rao",
+    buyerCompany: "Heritage Hospitality Group",
+    message:
+      "Interested in ordering 60 bowl sets for our new dining collection. Can you share bulk pricing?",
+    quantity: 60,
+    status: "new",
+    createdAt: "2026-08-27",
+  },
+  {
+    id: "enq_2",
+    productId: "prod_banarasi_scarf",
+    buyerName: "Vikram Shah",
+    buyerCompany: "EarthWoven Wholesale",
+    message:
+      "Would like to discuss a recurring monthly order of 150 scarves for our retail network.",
+    quantity: 150,
+    status: "new",
+    createdAt: "2026-08-26",
+  },
+  {
+    id: "enq_3",
+    productId: "prod_bamboo_basket",
+    buyerName: "Kabir Malhotra",
+    buyerCompany: "GreenRoots Sustainable Living",
+    message:
+      "Love the sustainability story here. Can you produce 100 units within 6 weeks?",
+    quantity: 100,
+    status: "responded",
+    createdAt: "2026-08-24",
+  },
+  {
+    id: "enq_7",
+    productId: "prod_bamboo_lamp",
+    buyerName: "Devika Iyer",
+    buyerCompany: "UrbanNest Interiors",
+    message: "Would these work with dimmable warm LED bulbs? Interested in 25 units.",
+    quantity: 25,
+    status: "new",
+    createdAt: "2026-08-25",
+  },
+  {
+    id: "enq_8",
+    productId: "prod_bamboo_planter",
+    buyerName: "Aarav Sen",
+    buyerCompany: "Little Bazaar Gift Shops",
+    message: "Can we get a sample shipped to Goa before placing a bulk order?",
+    quantity: 30,
+    status: "new",
+    createdAt: "2026-08-22",
+  },
+  {
+    id: "enq_4",
+    productId: "prod_madhubani_tree",
+    buyerName: "Simran Kaur",
+    buyerCompany: "Little Bazaar Gift Shops",
+    message: "Do you offer smaller A4-sized versions for our gift shop shelves?",
+    quantity: 40,
+    status: "new",
+    createdAt: "2026-08-23",
+  },
+  {
+    id: "enq_5",
+    productId: "prod_block_print_bedsheet",
+    buyerName: "Rohan Mehta",
+    buyerCompany: "CraftFolk Retail Co.",
+    message:
+      "Interested in an exclusive colourway for our stores. What is the MOQ for custom dye combinations?",
+    quantity: 120,
+    status: "responded",
+    createdAt: "2026-08-20",
+  },
+  {
+    id: "enq_6",
+    productId: "prod_brass_diya",
+    buyerName: "Neha Kapoor",
+    buyerCompany: "Giftwala Corporate Gifting",
+    message: "Need 300 units for our Diwali corporate hamper program this year.",
+    quantity: 300,
+    status: "new",
+    createdAt: "2026-08-19",
+  },
+];
+
+export function getEnquiriesForArtisan(artisanId: string, productIds: string[]): Enquiry[] {
+  return seedEnquiries.filter((e) => productIds.includes(e.productId));
+}

@@ -1,0 +1,150 @@
+// Kalakriti AI — logical data model.
+//
+// This prototype runs entirely on seeded TypeScript data + in-memory
+// client state (see /data and lib/store.ts) so the demo never depends on
+// a database connection. This schema documents the intended production
+// model — swap the datasource for Postgres and wire up @prisma/client in
+// /lib/db when moving past the prototype stage.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ARTISAN
+  BUYER
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum CompetitionLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum BuyerCategory {
+  RETAILER
+  INTERIOR_DESIGNER
+  HOTEL
+  GIFT_SHOP
+  WHOLESALER
+  CORPORATE_BUYER
+}
+
+enum BulkOrderStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  role      UserRole
+  artisan   Artisan?
+  buyer     Buyer?
+  createdAt DateTime @default(now())
+}
+
+model Artisan {
+  id                  String    @id @default(cuid())
+  userId              String    @unique
+  user                User      @relation(fields: [userId], references: [id])
+  name                String
+  location            String
+  state               String
+  craftSpecialization String
+  bio                 String
+  yearsOfExperience   Int       @default(0)
+  rating              Float     @default(0)
+  memberSince         DateTime  @default(now())
+  products            Product[]
+  bulkOrderRequests   BulkOrderRequest[]
+}
+
+model Product {
+  id                 String                @id @default(cuid())
+  artisanId          String
+  artisan            Artisan               @relation(fields: [artisanId], references: [id])
+  name               String
+  category           String
+  material            String
+  description        String
+  shortDescription   String
+  price              Float
+  tags               String // JSON-encoded string[]
+  status             ProductStatus         @default(DRAFT)
+  craftTechnique     String
+  productionTimeDays Int
+  availableQuantity  Int
+  views              Int                   @default(0)
+  enquiries          Int                   @default(0)
+  aiGenerated        Boolean               @default(true)
+  createdAt          DateTime              @default(now())
+  analytics          MarketplaceAnalytics?
+  financialPlan      FinancialPlan?
+  bulkOrderRequests  BulkOrderRequest[]
+}
+
+model MarketplaceAnalytics {
+  id                String   @id @default(cuid())
+  productId         String   @unique
+  product           Product  @relation(fields: [productId], references: [id])
+  averagePrice      Float
+  minPrice          Float
+  maxPrice          Float
+  competitionLevel  CompetitionLevel
+  similarProductIds String // JSON-encoded string[]
+  updatedAt         DateTime @updatedAt
+}
+
+model FinancialPlan {
+  id                 String   @id @default(cuid())
+  productId          String   @unique
+  product            Product  @relation(fields: [productId], references: [id])
+  materialCost       Float
+  labourCost         Float
+  packagingCost      Float
+  transportCost      Float
+  otherCost          Float
+  sellingPrice       Float
+  productionQuantity Int
+  updatedAt          DateTime @updatedAt
+}
+
+model Buyer {
+  id                String             @id @default(cuid())
+  userId            String             @unique
+  user              User               @relation(fields: [userId], references: [id])
+  companyName       String
+  category          BuyerCategory
+  location          String
+  buyingInterests   String // JSON-encoded string[]
+  bulkOrderRequests BulkOrderRequest[]
+}
+
+model BulkOrderRequest {
+  id               String          @id @default(cuid())
+  buyerId          String
+  buyer            Buyer           @relation(fields: [buyerId], references: [id])
+  productId        String
+  product          Product         @relation(fields: [productId], references: [id])
+  artisanId        String
+  artisan          Artisan         @relation(fields: [artisanId], references: [id])
+  quantity         Int
+  budget           Float
+  deliveryLocation String
+  message          String
+  status           BulkOrderStatus @default(PENDING)
+  createdAt        DateTime        @default(now())
+}

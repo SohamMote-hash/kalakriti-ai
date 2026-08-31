@@ -1,0 +1,175 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+:root {
+  --background: #faf6ef;
+  --surface: #ffffff;
+  --surface-muted: #f3ead9;
+  --foreground: #2b2420;
+  --foreground-muted: #6b6055;
+  --border: #e7dcc7;
+  --border-strong: #d8c8a8;
+
+  --primary: #bf5b30;
+  --primary-hover: #a84a24;
+  --primary-foreground: #fdf6ee;
+  --primary-soft: #f4e1d3;
+
+  --secondary: #33513f;
+  --secondary-hover: #24392c;
+  --secondary-foreground: #f2f5ee;
+  --secondary-soft: #dee9df;
+
+  --accent: #c1972f;
+  --accent-soft: #f3e6c6;
+
+  --success: #3f7d4f;
+  --success-soft: #dcece0;
+  --warning: #b8862a;
+  --warning-soft: #f4e6c9;
+  --danger: #b6432f;
+  --danger-soft: #f5ddd6;
+  --info: #35617a;
+  --info-soft: #dee9ef;
+
+  --ring: #bf5b30;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  --shadow-color: 26 20 12;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-soft: var(--secondary-soft);
+
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --color-ring: var(--ring);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-display:
+    "Fraunces", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-slide-up: slide-up 0.35s ease-out;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--primary-soft);
+  color: var(--primary-hover);
+}
+
+.craft-texture {
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(43, 36, 32, 0.06) 1px,
+      transparent 0
+    );
+  background-size: 18px 18px;
+}
+
+.card-shadow {
+  box-shadow:
+    0 1px 2px rgb(var(--shadow-color) / 0.04),
+    0 8px 24px -12px rgb(var(--shadow-color) / 0.12);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #business-plan-document,
+  #business-plan-document * {
+    visibility: visible;
+  }
+  #business-plan-document {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+}
