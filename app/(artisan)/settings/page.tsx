@@ -89,7 +89,7 @@ export default function SettingsPage() {
       <Card className="mt-6 p-6">
         <p className="font-display text-base font-semibold text-foreground">AI Preferences</p>
         <p className="mt-1 text-sm text-foreground-muted">
-          Kalakriti AI automatically falls back to offline mock generation when no AI API key is
+          Kalakriti automatically falls back to offline mock generation when no AI API key is
           configured, so every feature works fully without setup.
         </p>
       </Card>

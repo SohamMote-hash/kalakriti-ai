@@ -130,7 +130,7 @@ async function realGenerateProductListing(
   input: AIProductListingInput,
 ): Promise<AIProductListingOutput> {
   const system =
-    "You are an expert e-commerce copywriter for Kalakriti AI, a marketplace that helps rural Indian artisans sell handmade products to larger buyers. " +
+    "You are an expert e-commerce copywriter for Kalakriti, a marketplace that helps rural Indian artisans sell handmade products to larger buyers. " +
     "Given basic product details, produce a professional listing. Respond with ONLY minified JSON matching this TypeScript type, no markdown: " +
     '{"title": string, "description": string, "category": string, "materials": string[], "tags": string[], "craftTechnique": string, "suggestedPrice": number}. ' +
     "The description should be 2-4 sentences, warm and professional, emphasising craftsmanship and authenticity. Tags should be short PascalCase words without # symbols. suggestedPrice is in Indian Rupees (INR), a realistic number for a handmade artisan product.";

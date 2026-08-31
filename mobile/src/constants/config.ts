@@ -1,7 +1,7 @@
 import { Platform } from "react-native";
 
 /**
- * Base URL of the Kalakriti AI backend (the existing Next.js app's
+ * Base URL of the Kalakriti backend (the existing Next.js app's
  * /api/ai/* routes). Override by setting EXPO_PUBLIC_API_URL before
  * running `expo start` (e.g. EXPO_PUBLIC_API_URL=http://192.168.1.5:3000
  * so a physical device on the same network can reach your dev machine).

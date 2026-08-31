@@ -19,7 +19,7 @@ export function PlanDocument({
   return (
     <div id="business-plan-document" className="mx-auto max-w-3xl rounded-xl border border-border bg-surface p-10 shadow-sm">
       <div className="mb-8 border-b border-border pb-6 text-center">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary">Kalakriti AI</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary">Kalakriti</p>
         <h1 className="mt-2 font-display text-2xl font-semibold text-foreground">
           Business Plan — {productName}
         </h1>

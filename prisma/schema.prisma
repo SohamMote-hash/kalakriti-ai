@@ -1,4 +1,4 @@
-// Kalakriti AI — logical data model.
+// Kalakriti — logical data model.
 //
 // This prototype runs entirely on seeded TypeScript data + in-memory
 // client state (see /data and lib/store.ts) so the demo never depends on

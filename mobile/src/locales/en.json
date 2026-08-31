@@ -1,6 +1,6 @@
 {
   "common": {
-    "brandName": "Kalakriti AI",
+    "brandName": "Kalakriti",
     "tagline": "From Handmade Craft to Digital Business",
     "aiGenerated": "AI Generated",
     "save": "Save",
@@ -273,7 +273,7 @@
     "switchToArtisan": "Switch to Artisan Mode",
     "switchToBuyer": "Switch to Buyer Mode",
     "aiPreferences": "AI Preferences",
-    "aiPreferencesBody": "Kalakriti AI works fully offline with demo data when no server or API key is available.",
+    "aiPreferencesBody": "Kalakriti works fully offline with demo data when no server or API key is available.",
     "memberSince": "Member since {{year}} · {{rating}}★ rating",
     "fieldFullName": "Full Name",
     "fieldCraft": "Craft Specialization",

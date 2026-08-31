@@ -4,7 +4,7 @@ import { TopNav } from "@/components/shared/top-nav";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
-  title: "Kalakriti AI — From Handmade Craft to Digital Business",
+  title: "Kalakriti — From Handmade Craft to Digital Business",
   description:
     "AI-powered digital marketplace and business intelligence platform helping rural and traditional Indian artisans turn handmade products into professional online businesses.",
 };

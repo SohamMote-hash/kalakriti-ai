@@ -275,7 +275,7 @@ export default function LandingPage() {
             From Handmade Product to Digital Business.
           </h2>
           <p className="max-w-xl text-secondary-foreground/80">
-            Join Kalakriti AI and let AI handle the listing, pricing, and business planning —
+            Join Kalakriti and let AI handle the listing, pricing, and business planning —
             while you focus on your craft.
           </p>
           <Button size="lg" variant="default" asChild className="mt-2">
@@ -287,7 +287,7 @@ export default function LandingPage() {
       </section>
 
       <footer className="border-t border-border px-6 py-8 text-center text-xs text-foreground-muted">
-        Kalakriti AI — a hackathon prototype. All artisan and buyer data shown is illustrative
+        Kalakriti — a hackathon prototype. All artisan and buyer data shown is illustrative
         seed data.
       </footer>
     </div>

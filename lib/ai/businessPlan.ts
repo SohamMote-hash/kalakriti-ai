@@ -24,7 +24,7 @@ export function mockGenerateBusinessPlan(ctx: BusinessPlanContext): AIBusinessPl
   const sections: AIBusinessPlanSection[] = [
     {
       title: "Business Overview",
-      content: `${artisan.name} operates a ${artisan.craftSpecialization.toLowerCase()} business based in ${artisan.location}, ${artisan.state}, with ${artisan.yearsOfExperience} years of craft experience. The business is now scaling its flagship product, "${product.name}", from local sales into a structured digital marketplace channel via Kalakriti AI, targeting both individual buyers and larger B2B customers such as retailers and interior designers.`,
+      content: `${artisan.name} operates a ${artisan.craftSpecialization.toLowerCase()} business based in ${artisan.location}, ${artisan.state}, with ${artisan.yearsOfExperience} years of craft experience. The business is now scaling its flagship product, "${product.name}", from local sales into a structured digital marketplace channel via Kalakriti, targeting both individual buyers and larger B2B customers such as retailers and interior designers.`,
     },
     {
       title: "Product Description",
@@ -71,7 +71,7 @@ async function realGenerateBusinessPlan(ctx: BusinessPlanContext): Promise<AIBus
   const { product, artisan, financialInputs, financialResults, marketAnalysis } = ctx;
 
   const system =
-    "You are a business consultant AI for Kalakriti AI, helping a rural Indian artisan turn their handmade product business into a structured, fundable plan. " +
+    "You are a business consultant AI for Kalakriti, helping a rural Indian artisan turn their handmade product business into a structured, fundable plan. " +
     'Respond with ONLY minified JSON: {"sections": [{"title": string, "content": string}]}. ' +
     "Produce exactly 9 sections in this order with these exact titles: Business Overview, Product Description, Target Customers, Market Opportunity, Pricing Strategy, Cost Structure, Revenue Projection, Growth Strategy, Risks and Recommendations. Each content should be 2-4 professional sentences grounded in the data provided, in Indian Rupees.";
 

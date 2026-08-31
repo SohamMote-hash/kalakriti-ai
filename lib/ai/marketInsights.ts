@@ -51,7 +51,7 @@ async function realGenerateDashboardInsights(
   products: Product[],
 ): Promise<AIMarketInsight[]> {
   const system =
-    "You are a business analyst assistant for Kalakriti AI, helping rural Indian artisans understand their product performance. " +
+    "You are a business analyst assistant for Kalakriti, helping rural Indian artisans understand their product performance. " +
     'Respond with ONLY minified JSON: {"insights": [{"headline": string, "detail": string, "tone": "positive"|"neutral"|"warning"}]}. Provide 3-4 short, specific, actionable insights.';
 
   const summary = products

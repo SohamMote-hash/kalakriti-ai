@@ -192,7 +192,7 @@ export function mockGenerateBusinessPlan(ctx: BusinessPlanContext): AIBusinessPl
   const sections: AIBusinessPlanSection[] = [
     {
       title: "Business Overview",
-      content: `${artisan.name} operates a ${artisan.craftSpecialization.toLowerCase()} business based in ${artisan.location}, ${artisan.state}, with ${artisan.yearsOfExperience} years of craft experience. The business is now scaling its flagship product, "${product.name}", from local sales into a structured digital marketplace channel via Kalakriti AI, targeting both individual buyers and larger B2B customers such as retailers and interior designers.`,
+      content: `${artisan.name} operates a ${artisan.craftSpecialization.toLowerCase()} business based in ${artisan.location}, ${artisan.state}, with ${artisan.yearsOfExperience} years of craft experience. The business is now scaling its flagship product, "${product.name}", from local sales into a structured digital marketplace channel via Kalakriti, targeting both individual buyers and larger B2B customers such as retailers and interior designers.`,
     },
     {
       title: "Product Description",

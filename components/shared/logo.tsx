@@ -10,7 +10,7 @@ export function Logo({ className, href = "/" }: { className?: string; href?: str
       </span>
       <span className="flex flex-col leading-none">
         <span className="font-display text-[17px] font-semibold tracking-tight text-foreground">
-          Kalakriti AI
+          Kalakriti
         </span>
         <span className="text-[10.5px] font-medium uppercase tracking-wide text-foreground-muted">
           Craft to Digital Business
